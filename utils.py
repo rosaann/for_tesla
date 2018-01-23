@@ -86,6 +86,7 @@ def frame_count(path, method='ffmpeg'):
 
 ##     
 def ffmpeg_frame_count(path):
+    print(path)
     cmd = 'ffmpeg -i {} -vcodec copy -acodec copy -f null /dev/null 2>&1'.format(path)
     cmd_res = sp.check_output(cmd, shell=True)
     cmd_res = copy.deepcopy(cmd_res)
