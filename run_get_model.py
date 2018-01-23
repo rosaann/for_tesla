@@ -20,8 +20,9 @@ def img_pre_process(img, resize_w, resize_h):
     :return: Returns the processed image
     """
     ## Chop off 1/3 from the top and cut bottom 150px(which contains the head of car)
-    shape = img.shape
-#    print("shape  ", shape)
+   # shape = img.shape
+    shape = (720, 1280, 3)
+   # print("shape  ", shape)
     img = img[int(shape[0]/3):shape[0]-150, 0:shape[1]]
     ## Resize the image
     img = cv2.resize(img, (resize_w, resize_h), interpolation=cv2.INTER_AREA)
