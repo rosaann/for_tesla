@@ -45,7 +45,13 @@ def loadVideoAndResize(resize_w, resize_h):
         img_list = []
     
         for frame_id in range(frame_count):
-            ret, img = cap.read()       
+            ret, img = cap.read() 
+            print ("cap  ")
+            print(cap)
+            print ("img")
+            print(ret)
+            print (img)
+            
             img_resized = img_pre_process(img, resize_w, resize_h)
             img_list.append(img_resized)
         
