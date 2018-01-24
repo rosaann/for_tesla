@@ -42,8 +42,11 @@ def loadVideoAndResize(resize_w, resize_h):
     
         frame_count = utils.frame_count(vid_path)
         cap = cv2.VideoCapture(vid_path)
+        if not cap.open(vid_path):
+            print("can not open the video")
+            exit(1)
         img_list = []
-    
+        print("open the video")
         for frame_id in range(frame_count):
             ret, img = cap.read() 
             print ("cap  ")
